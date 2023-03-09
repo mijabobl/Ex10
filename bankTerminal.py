@@ -5,7 +5,8 @@ while secret != '9999':
     secret = input("Please enter your 4 digit pin: ")
     count = count + 1
     if secret == str("9999"):
-        print("Welcome to Your banking How Much Money Would you Like")
+        print("Login Successful")
+        break
     else:
         print("no")
         if count == 1:

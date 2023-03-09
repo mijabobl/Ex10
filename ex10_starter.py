@@ -1,6 +1,7 @@
 import sys
 import glob
 import os
+from os.path import getsize
 
 # Get the directory name
 if sys.platform == 'win32':
@@ -24,27 +25,15 @@ print("files in this directory")
 print(filez)
 print()
 
+for f in filez:
+    if getsize(f) > 0:
+        print(f, getsize(f))
+
 size = 0                                    #none of this works
 for files in os.walk(path):                 #just running some ideas through!
     size = os.path.getsize(filez)           #trying to find files in a directory
 print("file size is ", size)                #and get the size in a loop
 print()                                     #and print them
-
-filePath = r'C:\Users\rebjo\PycharmProjects\Exercise10\nobytes2.txt'
-fileSize = os.path.getsize(filePath)
-basename = os.path.basename(filePath)
-if fileSize > 0:
-    print(basename, "contains", fileSize, "bytes")
-else:
-    print("i wont display this file, its nothing")
-
-filePath = r'C:\Users\rebjo\PycharmProjects\Exercise10\main.py'
-fileSize = os.path.getsize(filePath)
-basename = os.path.basename(filePath)
-if fileSize > 0:
-    print(basename, "contains", fileSize, "bytes")
-else:
-    print("i wont display this file, its nothing")
 
 filePath = r'C:\Users\rebjo\PycharmProjects\Exercise10\ex10_starter.py'
 fileSize = os.path.getsize(filePath)
@@ -54,12 +43,6 @@ if fileSize > 0:
 else:
     print("i wont display this file, its nothing")
 
-filePath = r'C:\Users\rebjo\PycharmProjects\Exercise10\nobytes1.txt'
-fileSize = os.path.getsize(filePath)
-basename = os.path.basename(filePath)
-if fileSize > 0:
-    print(basename, "contains", fileSize, "bytes")
-else:
-    print("i wont display this file, its nothing")
+
 
 print("hdir is: ", hdir)
